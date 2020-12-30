@@ -7,4 +7,29 @@ body{
 
 h1{
   font-size: xx-large;
+  margin: 10px;
+}
+
+.nav-button{
+  background-color: rgb(17, 17, 22);
+  color: rgb(226, 0, 0);
+  text-shadow: 2px 2px rgba(141, 8, 8, 0.582);
+  font-family: monospace;
+  padding: 5px;
+  margin: 5px;
+  height: fit-content;
+  border-style: groove;
+  border-color: rgb(226, 0, 0);
+}
+
+#nav-display{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  border-style: groove;
+  border-width: 2px;
+  border-color:rgb(0, 252, 134);
+  box-shadow: 3px 3px rgba(11, 133, 76, 0.342);
+  background-color: rgba(58, 13, 13, 0.582);
 }
