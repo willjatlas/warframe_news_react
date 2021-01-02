@@ -2,7 +2,7 @@
 const NewsItem = ()=>{
 
     return(
-        <div class="news-item">
+        <div id="news-item">
             <p>This is a news item.</p>
         </div>
     );

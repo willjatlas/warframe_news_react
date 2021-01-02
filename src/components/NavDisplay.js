@@ -1,13 +1,13 @@
 
-const NavDisplay = ({Platform}) => {
+const NavDisplay = ({handleButton}) => {
 
     return (
         <div id="nav-display">
             <h1>Warframe News</h1>
-            <button class="nav-button"> PC </button>
-            <button class="nav-button"> PS4 </button>
-            <button class="nav-button"> XBox1 </button>
-            <button class="nav-button"> Switch </button>
+            <button id="nav-button" onClick={handleButton} value="pc" > PC </button>
+            <button id="nav-button" onClick={handleButton} value="ps4"> PS4 </button>
+            <button id="nav-button" onClick={handleButton} value="xb1"> XBox1 </button>
+            <button id="nav-button" onClick={handleButton} value="swi"> Switch </button>
         </div>
     );
 

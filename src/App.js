@@ -9,9 +9,13 @@ const App = ()=> {
 
   const [platform, setPlatform] = useState("");
 
+  const handleButton = (event)=>{
+      setPlatform(event.target.value)
+  }
+
   return (
     <>
-      <NavDisplay platform = {platform}/> 
+      <NavDisplay handleButton = {handleButton}/> 
       <NewsItem />
     </>
   )
