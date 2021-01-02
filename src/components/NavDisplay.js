@@ -1,5 +1,5 @@
 
-const NavDisplay = ({setPlatform}) => {
+const NavDisplay = ({Platform}) => {
 
     return (
         <div id="nav-display">
