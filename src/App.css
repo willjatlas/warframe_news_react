@@ -25,6 +25,11 @@ h1{
   border-radius: 3px;
 }
 
+#nav-button:hover{
+  color: black;
+  background-color: rgba(255, 0, 221, 0.74);
+}
+
 #nav-display{
   display: flex;
   justify-content: center;
