@@ -1,9 +1,7 @@
 import './App.css';
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {useState, useEffect} from "react";
 import NavDisplay from "./components/NavDisplay";
-import Home from "./components/Home";
-import NewsItem from './components/NewsItem';
+import NewsDisplay from './components/NewsDisplay';
 
 const App = ()=> {
 
@@ -25,22 +23,19 @@ const App = ()=> {
 
   const handleButton = (event)=>{
       setPlatform(event.target.value)
-  }
+  };
 
   useEffect(() => {
     fetchNewsData();
   }, []);
 
   return (
-    <Router>
-      <>
-        <NavDisplay handleButton = {handleButton}/> 
-        <Switch>
-          <Route exact path="/" component={Home} />
-        </Switch>
-      </>
-    </Router>
-  )
+    <>
+      <NavDisplay handleButton={handleButton}/>
+      <NewsDisplay platform={platform} newsItems={newsItems} />
+    </>
+    
+  );
 
 };
 
