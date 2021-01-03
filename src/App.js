@@ -5,7 +5,7 @@ import NewsDisplay from './components/NewsDisplay';
 
 const App = ()=> {
 
-  const [platform, setPlatform] = useState("");
+  const [platform, setPlatform] = useState("PC");
   const [newsItems, setNewsItems] = useState([]);
 
   const fetchNewsData = ()=>{
