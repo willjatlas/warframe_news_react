@@ -40,8 +40,9 @@ h1{
   margin-bottom: 15px;
 }
 
-#news-item{
+#content-display{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border-style: groove;

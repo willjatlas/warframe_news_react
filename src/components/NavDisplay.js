@@ -1,4 +1,5 @@
 import wfLogo from "../wfLogo.png";
+
 const NavDisplay = ({handleButton}) => {
 
     return (
