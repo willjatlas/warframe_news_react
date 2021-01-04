@@ -1,16 +1,22 @@
-import NewsItem from "./NewsItem"
 
-const NewsDisplay = ({platform,newsItems})=>{
+const NewsDisplay = ({platform,currentNews})=>{
 
-    if(!newsItems) return null;
+    if(!currentNews) return null;
 
     return(
         <div id="news-display">
             <h2>{platform} News</h2>
             <ul>
-                {newsItems.map((element)=>{
+                {currentNews.map((element)=>{
                     return(
-                        <li>{element.asString}</li>
+                        <li>
+                            {element.eta}: -
+                            <b>{element.message}</b>
+                            <br></br>
+                            <a id="links" href={element.link}>
+                                {element.link}
+                            </a>
+                        </li>
                     )
                 })}
             </ul>

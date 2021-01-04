@@ -7,6 +7,7 @@ const App = ()=> {
 
   const [platform, setPlatform] = useState("PC");
   const [newsItems, setNewsItems] = useState([]);
+  const [currentNews, setCurrentNews] = useState([]);
 
   const fetchNewsData = ()=>{
 
@@ -16,7 +17,8 @@ const App = ()=> {
     for (element of platforms){
       fetch(`https://api.warframestat.us/${element}/news`)
         .then ((response)=>response.json())
-        .then ((jsonData)=>setNewsItems([...jsonData]));
+        .then ((jsonData)=>setNewsItems(newsItems => [...newsItems, jsonData]));
+        console.log(element)
     };
       
   };
@@ -29,10 +31,27 @@ const App = ()=> {
     fetchNewsData();
   }, []);
 
+  useEffect(()=>{
+
+    if(platform === "PC"){
+      setCurrentNews(newsItems[0])
+    }
+    else if(platform === "PS4"){
+      setCurrentNews(newsItems[1])
+    }
+    else if(platform === "Xbox1"){
+      setCurrentNews(newsItems[1])
+    }
+    else if(platform === "Switch"){
+      setCurrentNews(newsItems[1])
+    }
+
+  },[platform]);
+
   return (
     <>
       <NavDisplay handleButton={handleButton}/>
-      <NewsDisplay platform={platform} newsItems={newsItems} />
+      <NewsDisplay platform={platform} currentNews={currentNews} />
     </>
     
   );
