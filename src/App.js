@@ -9,16 +9,14 @@ const App = ()=> {
   const [newsItems, setNewsItems] = useState([]);
   const [currentNews, setCurrentNews] = useState([]);
 
-  const fetchNewsData = ()=>{
+  const fetchNewsData = () => {
 
     const platforms = ["pc", "ps4", "xb1", "swi"];
-    let element;
 
-    for (element of platforms){
+    for (const element of platforms){
       fetch(`https://api.warframestat.us/${element}/news`)
         .then ((response)=>response.json())
         .then ((jsonData)=>setNewsItems(newsItems => [...newsItems, jsonData]));
-        console.log(element)
     };
       
   };
@@ -46,7 +44,7 @@ const App = ()=> {
       setCurrentNews(newsItems[1])
     }
 
-  },[platform]);
+  },[platform, newsItems]);
 
   return (
     <>
